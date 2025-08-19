@@ -1,9 +1,11 @@
-<div class="survey-container">
+<div class="survey-container" [style.background-color]="headerBackgroundColor">
   <app-language-switcher></app-language-switcher>
   
-  <div class="logo-container">
-    <img [src]="logoPath" alt="Festival Afromonde 2025" class="logo">
-  </div>
+  @if (logoUrl) {
+    <div class="logo-container">
+      <img [src]="logoUrl" alt="Logo" class="logo">
+    </div>
+  }
   
   @if (showThankYou) {
     <div class="thank-you-message">

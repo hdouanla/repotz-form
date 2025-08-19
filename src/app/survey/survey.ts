@@ -23,25 +23,26 @@ export class Survey implements OnInit, OnDestroy {
   private formApiService = inject(FormApiService);
   private languageSubscription?: Subscription;
   private routeSubscription?: Subscription;
-  
+
   surveyModel!: Model;
-  readonly logoPath = environment.logoPath;
   showThankYou = false;
   currentLanguage: SupportedLanguage = 'en';
   formKey = '';
   currentFormId?: string;
+  logoUrl = '';
+  headerBackgroundColor = '';
 
   ngOnInit() {
     this.routeSubscription = this.route.params.subscribe(params => {
       const urlLang = params['lang'];
       this.formKey = params['formKey'];
-      
+
       // Initialize language based on URL, browser, or fallback
       this.currentLanguage = this.languageService.initializeFromUrl(urlLang);
-      
+
       // Form starts fresh - no form ID yet
       this.currentFormId = undefined;
-      
+
       this.loadSurveyData();
     });
 
@@ -73,17 +74,23 @@ export class Survey implements OnInit, OnDestroy {
     try {
       // Load the form definition
       const formData = await firstValueFrom(this.formApiService.loadFormData(this.formKey));
-      
-      this.surveyModel = new Model(formData);
+
+      console.log('formData: ', formData);
+
+      // Set dynamic logo and theme from API response
+      this.logoUrl = formData.logo_url || '';
+      this.headerBackgroundColor = formData.background_color || '#ffffff';
+
+      this.surveyModel = new Model(formData.form_data);
       this.surveyModel.locale = surveyLocale;
       this.surveyModel.onComplete.add(this.onSurveyComplete.bind(this));
       this.surveyModel.onPartialSend.add(this.onPartialSave.bind(this));
-      
+
       // Note: Form always starts fresh on app load
-      
+
       // Enable incremental saving
       this.setupIncrementalSaving();
-      
+
       this.cdr.detectChanges();
     } catch (error) {
       console.error('Error loading form data:', error);
@@ -94,7 +101,7 @@ export class Survey implements OnInit, OnDestroy {
 
   private updateSurveyLanguage() {
     if (!this.surveyModel) return;
-    
+
     const surveyLocale = this.currentLanguage === 'en' ? 'en' : 'fr';
     surveyLocalization.currentLocale = surveyLocale;
     this.surveyModel.locale = surveyLocale;
@@ -103,7 +110,7 @@ export class Survey implements OnInit, OnDestroy {
 
   private createFallbackSurvey() {
     const surveyLocale = this.currentLanguage === 'en' ? 'en' : 'fr';
-    
+
     this.surveyModel = new Model({
       title: this.currentLanguage === 'en' ? "Form Not Found" : "Formulaire non trouvé",
       pages: [{
@@ -111,13 +118,13 @@ export class Survey implements OnInit, OnDestroy {
         elements: [{
           type: "html",
           name: "error_message",
-          html: this.currentLanguage === 'en' 
+          html: this.currentLanguage === 'en'
             ? "<p>The requested form could not be loaded. Please check the URL and try again.</p>"
             : "<p>Le formulaire demandé n'a pas pu être chargé. Veuillez vérifier l'URL et réessayer.</p>"
         }]
       }]
     });
-    
+
     this.surveyModel.locale = surveyLocale;
     this.cdr.detectChanges();
   }
@@ -137,7 +144,7 @@ export class Survey implements OnInit, OnDestroy {
     if (!this.surveyModel || !this.formKey) return;
 
     const formData = this.surveyModel.data;
-    
+
     try {
       if (this.currentFormId) {
         // Update existing form response
@@ -149,9 +156,9 @@ export class Survey implements OnInit, OnDestroy {
         const response = await firstValueFrom(
           this.formApiService.createFormResponse(this.formKey, formData)
         );
-        
-        if (response.formId) {
-          this.currentFormId = response.formId;
+
+        if (response.id) {
+          this.currentFormId = response.id;
         }
       }
     } catch (error) {
@@ -161,7 +168,7 @@ export class Survey implements OnInit, OnDestroy {
 
   private async onSurveyComplete(sender: any) {
     const formData = sender.data;
-    
+
     if (!this.formKey) {
       this.handleErrorResponse();
       return;
@@ -169,7 +176,7 @@ export class Survey implements OnInit, OnDestroy {
 
     try {
       let response: FormSubmissionResponse;
-      
+
       if (this.currentFormId) {
         // Final update with completion flag
         response = await firstValueFrom(
@@ -180,16 +187,16 @@ export class Survey implements OnInit, OnDestroy {
         response = await firstValueFrom(
           this.formApiService.createFormResponse(this.formKey, formData)
         );
-        
-        if (response.formId) {
+
+        if (response.id) {
           response = await firstValueFrom(
-            this.formApiService.updateFormResponse(this.formKey, response.formId, formData, true)
+            this.formApiService.updateFormResponse(this.formKey, response.id, formData, true)
           );
         }
       }
-      
+
       // Form completed successfully
-      
+
       this.handleSuccessResponse(response);
     } catch (error) {
       console.error('Error completing form submission:', error);
@@ -208,8 +215,8 @@ export class Survey implements OnInit, OnDestroy {
 
   private handleSuccessResponse(response: FormSubmissionResponse) {
     // Check if API response contains a redirect URL
-    if (response?.redirectUrl) {
-      window.location.href = response.redirectUrl;
+    if (response?.redirect_url) {
+      window.location.href = response.redirect_url;
     } else {
       // No redirect URL provided, show thank you message
       this.showThankYouMessage();

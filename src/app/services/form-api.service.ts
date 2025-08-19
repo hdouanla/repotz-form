@@ -6,14 +6,16 @@ import { environment } from '../../environments/environment';
 export interface FormData {
   id: string;
   title: string;
-  pages: any[];
+  form_data: any;
+  logo_url?: string;
+  background_color?: string;
   [key: string]: any;
 }
 
 export interface FormSubmissionResponse {
   success: boolean;
-  formId?: string;
-  redirectUrl?: string;
+  id?: string;
+  redirect_url?: string;
   message?: string;
 }
 
@@ -32,15 +34,13 @@ export class FormApiService {
 
   createFormResponse(formKey: string, data: any): Observable<FormSubmissionResponse> {
     return this.http.post<FormSubmissionResponse>(`${this.baseUrl}/forms/${formKey}/responses`, {
-      formData: data,
-      timestamp: new Date().toISOString()
+      formData: data
     });
   }
 
   updateFormResponse(formKey: string, formId: string, data: any, completed = false): Observable<FormSubmissionResponse> {
     return this.http.put<FormSubmissionResponse>(`${this.baseUrl}/forms/${formKey}/responses/${formId}`, {
       formData: data,
-      timestamp: new Date().toISOString(),
       completed
     });
   }
