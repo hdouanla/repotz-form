@@ -1,0 +1,1220 @@
+{
+  "locale": "fr",
+  "pages": [
+    {
+      "name": "page1",
+      "elements": [
+        {
+          "type": "panel",
+          "name": "General",
+          "title": {
+            "fr": "Informations personnelles (Optionnelles)",
+            "en": "Personal Information (Optional)"
+          },
+          "description": {
+            "fr": "Afromonde ne communiquera vos informations à personne d'autre et ne les utilisera à aucun autre but que de vous envoyer des informations si vous autorizez à la fin de ce formulaire.",
+            "en": "Afromonde will not share your information with anyone else and will not use it for any purpose other than sending you information if you authorize it at the end of this form."
+          },
+          "elements": [
+            {
+              "type": "text",
+              "name": "name",
+              "title": {
+                "fr": "Votre nom (Optionnel)",
+                "en": "Your name (Optional)"
+              }
+            },
+            {
+              "type": "text",
+              "name": "phone",
+              "title": {
+                "fr": "Votre téléphone (Optionnel)",
+                "en": "Your phone (Optional)"
+              }
+            },
+            {
+              "type": "text",
+              "name": "email",
+              "title": {
+                "fr": "Votre courriel (Optionnel)",
+                "en": "Your email (Optional)"
+              },
+              "inputType": "email"
+            }
+          ]
+        },
+        {
+          "type": "radiogroup",
+          "name": "question_01",
+          "title": {
+            "fr": "Avez-vous participé à l'Édition Afromonde 2024?",
+            "en": "Did you participate in the Afromonde 2024 Edition?"
+          },
+          "isRequired": true,
+          "choices": [
+            {
+              "value": "participation_2024_oui",
+              "text": {
+                "fr": "Oui",
+                "en": "Yes"
+              }
+            },
+            {
+              "value": "participation_2024_non",
+              "text": {
+                "fr": "Non",
+                "en": "No"
+              }
+            }
+          ]
+        },
+        {
+          "type": "checkbox",
+          "name": "question_02",
+          "visibleIf": "{question_01} = 'participation_2024_oui'",
+          "title": {
+            "fr": "Okay quels jours savez-vous participé en 2024?\r\n",
+            "en": "Okay, which days did you participate in 2024?\r\n"
+          },
+          "isRequired": true,
+          "choices": [
+            {
+              "value": "participation_2024_jeudi",
+              "text": {
+                "fr": "Jeudi 12 septembre",
+                "en": "Thursday, September 12"
+              }
+            },
+            {
+              "value": "participation_2024_vendredi",
+              "text": {
+                "fr": "Vendredi 13 septembre",
+                "en": "Friday, September 13"
+              }
+            },
+            {
+              "value": "participation_2024_samedi",
+              "text": {
+                "fr": "Samedi 14 septembre",
+                "en": "Saturday, September 14"
+              }
+            },
+            {
+              "value": "participation_2024_dimanche",
+              "text": {
+                "fr": "Dimanche 15 septembre",
+                "en": "Sunday, September 15"
+              }
+            }
+          ]
+        },
+        {
+          "type": "radiogroup",
+          "name": "question_03",
+          "title": {
+            "fr": "À quel groupe d'âge appartenez-vous?",
+            "en": "What age group do you belong to?"
+          },
+          "isRequired": true,
+          "choices": [
+            {
+              "value": "age_0_14",
+              "text": {
+                "fr": "Moins de 16 ans",
+                "en": "Under 16 years old"
+              }
+            },
+            {
+              "value": "age_16_17",
+              "text": {
+                "fr": "16 à 17 ans",
+                "en": "16 to 17 years old"
+              }
+            },
+            {
+              "value": "age_18_24",
+              "text": {
+                "fr": "18 à 24 ans",
+                "en": "18 to 24 years old"
+              }
+            },
+            {
+              "value": "age_25_34",
+              "text": {
+                "fr": "25 à 34 ans",
+                "en": "25 to 34 years old"
+              }
+            },
+            {
+              "value": "age_35_44",
+              "text": {
+                "fr": "35 à 44 ans",
+                "en": "35 to 44 years old"
+              }
+            },
+            {
+              "value": "age_45_54",
+              "text": {
+                "fr": "45 à 54 ans",
+                "en": "45 to 54 years old"
+              }
+            },
+            {
+              "value": "age_55_64",
+              "text": {
+                "fr": "55 à 64 ans",
+                "en": "55 to 64 years old"
+              }
+            },
+            {
+              "value": "age_65_plus",
+              "text": {
+                "fr": "65 ans et plus",
+                "en": "65 years and older"
+              }
+            },
+            {
+              "value": "age_aucune_reponse",
+              "text": {
+                "fr": "Je préfère ne pas répondre",
+                "en": "I prefer not to answer"
+              }
+            }
+          ]
+        },
+        {
+          "type": "radiogroup",
+          "name": "question_04",
+          "title": {
+            "fr": "Vous êtes",
+            "en": "You are"
+          },
+          "isRequired": true,
+          "choices": [
+            {
+              "value": "vous_etes_homme",
+              "text": {
+                "fr": "Un homme",
+                "en": "A man"
+              }
+            },
+            {
+              "value": "vous_etes_femme",
+              "text": {
+                "fr": "Une femme",
+                "en": "A woman"
+              }
+            },
+            {
+              "value": "vous_etes_non_binaire",
+              "text": {
+                "fr": "Non-binaire",
+                "en": "Non-binary"
+              }
+            },
+            {
+              "value": "vous_etes_aucune_reponse",
+              "text": {
+                "fr": "Je préfère ne pas répondre",
+                "en": "I prefer not to answer"
+              }
+            }
+          ]
+        },
+        {
+          "type": "dropdown",
+          "name": "question_21",
+          "title": {
+            "fr": "Quel moyen de transport avez-vous utilisé pour vous rendre au Festival Afromonde aujourd'hui?",
+            "en": "What means of transportation did you use to get to the Afromonde Festival today?"
+          },
+          "isRequired": true,
+          "choices": [
+            {
+              "value": "deplacement_bus",
+              "text": {
+                "fr": "Transports en commun (Bus, Metro, Bateau)",
+                "en": "Public transportation (Bus, Metro, Boat)"
+              }
+            },
+            {
+              "value": "deplacement_auto",
+              "text": {
+                "fr": "Je suis venu en auto",
+                "en": "I came by car"
+              }
+            },
+            {
+              "value": "deplacement_velo",
+              "text": {
+                "fr": "Velo ou Bixi",
+                "en": "Bicycle or Bixi"
+              }
+            },
+            {
+              "value": "deplacement_marche",
+              "text": {
+                "fr": "Marche",
+                "en": "Walking"
+              }
+            },
+            {
+              "value": "deplacement_autre",
+              "text": {
+                "fr": "Autre",
+                "en": "Other"
+              }
+            }
+          ]
+        },
+        {
+          "type": "dropdown",
+          "name": "question_05",
+          "title": {
+            "fr": "Quel est votre pays résidence principale?",
+            "en": "What is your main country of residence?"
+          },
+          "isRequired": true,
+          "choices": [
+            {
+              "value": "residence_country_canada",
+              "text": {
+                "fr": "Canada",
+                "en": "Canada"
+              }
+            },
+            {
+              "value": "residence_country_usa",
+              "text": {
+                "fr": "USA",
+                "en": "USA"
+              }
+            },
+            {
+              "value": "residence_country_allemagne",
+              "text": {
+                "fr": "Allemagne",
+                "en": "Germany"
+              }
+            },
+            {
+              "value": "residence_country_australie",
+              "text": {
+                "fr": "Australie",
+                "en": "Australia"
+              }
+            },
+            {
+              "value": "residence_country_belgique",
+              "text": {
+                "fr": "Belgique",
+                "en": "Belgium"
+              }
+            },
+            {
+              "value": "residence_country_bresil",
+              "text": {
+                "fr": "Brésil",
+                "en": "Brazil"
+              }
+            },
+            {
+              "value": "residence_country_finlande",
+              "text": {
+                "fr": "Finlande",
+                "en": "Finland"
+              }
+            },
+            {
+              "value": "residence_country_mexique",
+              "text": {
+                "fr": "Mexique",
+                "en": "Mexico"
+              }
+            },
+            {
+              "value": "residence_country_pays_bas",
+              "text": {
+                "fr": "Pays-Bas",
+                "en": "Netherlands"
+              }
+            },
+            {
+              "value": "residence_country_royaume_uni",
+              "text": {
+                "fr": "Royaume-Uni",
+                "en": "United Kingdom"
+              }
+            },
+            {
+              "value": "residence_country_suisse",
+              "text": {
+                "fr": "Suisse",
+                "en": "Switzerland"
+              }
+            },
+            {
+              "value": "residence_country_other",
+              "text": {
+                "fr": "Autre",
+                "en": "Other"
+              }
+            }
+          ],
+          "choicesByUrl": {
+            "valueName": "name"
+          }
+        },
+        {
+          "type": "dropdown",
+          "name": "question_06",
+          "visibleIf": "{question_05} = 'residence_country_canada'",
+          "title": {
+            "fr": "Quelle est votre province de rédidence",
+            "en": "What is your province of residence"
+          },
+          "isRequired": true,
+          "choices": [
+            {
+              "value": "QC",
+              "text": {
+                "fr": "Québec",
+                "en": "Quebec"
+              }
+            },
+            {
+              "value": "AB",
+              "text": {
+                "fr": "Alberta",
+                "en": "Alberta"
+              }
+            },
+            {
+              "value": "BC",
+              "text": {
+                "fr": "Colombie-Britannique",
+                "en": "British Columbia"
+              }
+            },
+            {
+              "value": "MB",
+              "text": {
+                "fr": "Manitoba",
+                "en": "Manitoba"
+              }
+            },
+            {
+              "value": "NB",
+              "text": {
+                "fr": "Nouveau-Brunswick",
+                "en": "New Brunswick"
+              }
+            },
+            {
+              "value": "NL",
+              "text": {
+                "fr": "Terre-Neuve-et-Labrador",
+                "en": "Newfoundland and Labrador"
+              }
+            },
+            {
+              "value": "NT",
+              "text": {
+                "fr": "Territoires du Nord-Ouest",
+                "en": "Northwest Territories"
+              }
+            },
+            {
+              "value": "NS",
+              "text": {
+                "fr": "Nouvelle-Écosse\t",
+                "en": "Nova Scotia"
+              }
+            },
+            {
+              "value": "NU",
+              "text": {
+                "fr": "Nunavut",
+                "en": "Nunavut"
+              }
+            },
+            {
+              "value": "ON",
+              "text": {
+                "fr": "Ontario",
+                "en": "Ontario"
+              }
+            },
+            {
+              "value": "PE",
+              "text": {
+                "fr": "Île-du-Prince-Édouard",
+                "en": "Prince Edward Island"
+              }
+            },
+            {
+              "value": "SK",
+              "text": {
+                "fr": "Saskatchewan",
+                "en": "Saskatchewan"
+              }
+            },
+            {
+              "value": "YT",
+              "text": {
+                "fr": "Yukon",
+                "en": "Yukon"
+              }
+            }
+          ],
+          "choicesByUrl": {
+            "valueName": "name"
+          }
+        },
+        {
+          "type": "text",
+          "name": "question_07",
+          "visibleIf": "{question_05} = 'residence_country_canada'",
+          "title": {
+            "fr": "Quels sont les 3 premiers caractères de votre code postal?",
+            "en": "What are the first 3 characters of your postal code?"
+          },
+          "isRequired": true
+        },
+        {
+          "type": "dropdown",
+          "name": "question_08",
+          "visibleIf": "{question_05} = 'residence_country_usa'",
+          "title": {
+            "fr": "Dans quel Etat résidez-vous principalement?",
+            "en": "In which state do you primarily reside?"
+          },
+          "isRequired": true,
+          "choices": [
+            {
+              "value": "AL",
+              "text": {
+                "fr": "Alabama",
+                "en": "Alabama"
+              }
+            },
+            {
+              "value": "AK",
+              "text": {
+                "fr": "Alaska",
+                "en": "Alaska"
+              }
+            },
+            {
+              "value": "AS",
+              "text": {
+                "fr": "American Samoa",
+                "en": "American Samoa"
+              }
+            },
+            {
+              "value": "AZ",
+              "text": {
+                "fr": "Arizona",
+                "en": "Arizona"
+              }
+            },
+            {
+              "value": "AR",
+              "text": {
+                "fr": "Arkansas",
+                "en": "Arkansas"
+              }
+            },
+            {
+              "value": "CA",
+              "text": {
+                "fr": "California",
+                "en": "California"
+              }
+            },
+            {
+              "value": "CO",
+              "text": {
+                "fr": "Colorado",
+                "en": "Colorado"
+              }
+            },
+            {
+              "value": "CT",
+              "text": {
+                "fr": "Connecticut",
+                "en": "Connecticut"
+              }
+            },
+            {
+              "value": "DE",
+              "text": {
+                "fr": "Delaware",
+                "en": "Delaware"
+              }
+            },
+            {
+              "value": "DC",
+              "text": {
+                "fr": "District Of Columbia",
+                "en": "District Of Columbia"
+              }
+            },
+            {
+              "value": "FM",
+              "text": {
+                "fr": "Federated States Of Micronesia",
+                "en": "Federated States Of Micronesia"
+              }
+            },
+            {
+              "value": "FL",
+              "text": {
+                "fr": "Florida",
+                "en": "Florida"
+              }
+            },
+            {
+              "value": "GA",
+              "text": {
+                "fr": "Georgia",
+                "en": "Georgia"
+              }
+            },
+            {
+              "value": "GU",
+              "text": {
+                "fr": "Guam",
+                "en": "Guam"
+              }
+            },
+            {
+              "value": "HI",
+              "text": {
+                "fr": "Hawaii",
+                "en": "Hawaii"
+              }
+            },
+            {
+              "value": "ID",
+              "text": {
+                "fr": "Idaho",
+                "en": "Idaho"
+              }
+            },
+            {
+              "value": "IL",
+              "text": {
+                "fr": "Illinois",
+                "en": "Illinois"
+              }
+            },
+            {
+              "value": "IN",
+              "text": {
+                "fr": "Indiana",
+                "en": "Indiana"
+              }
+            },
+            {
+              "value": "IA",
+              "text": {
+                "fr": "Iowa",
+                "en": "Iowa"
+              }
+            },
+            {
+              "value": "KS",
+              "text": {
+                "fr": "Kansas",
+                "en": "Kansas"
+              }
+            },
+            {
+              "value": "KY",
+              "text": {
+                "fr": "Kentucky",
+                "en": "Kentucky"
+              }
+            },
+            {
+              "value": "LA",
+              "text": {
+                "fr": "Louisiana",
+                "en": "Louisiana"
+              }
+            },
+            {
+              "value": "ME",
+              "text": {
+                "fr": "Maine",
+                "en": "Maine"
+              }
+            },
+            {
+              "value": "MH",
+              "text": {
+                "fr": "Marshall Islands",
+                "en": "Marshall Islands"
+              }
+            },
+            {
+              "value": "MD",
+              "text": {
+                "fr": "Maryland",
+                "en": "Maryland"
+              }
+            },
+            {
+              "value": "MA",
+              "text": {
+                "fr": "Massachusetts",
+                "en": "Massachusetts"
+              }
+            },
+            {
+              "value": "MI",
+              "text": {
+                "fr": "Michigan",
+                "en": "Michigan"
+              }
+            },
+            {
+              "value": "MN",
+              "text": {
+                "fr": "Minnesota",
+                "en": "Minnesota"
+              }
+            },
+            {
+              "value": "MS",
+              "text": {
+                "fr": "Mississippi",
+                "en": "Mississippi"
+              }
+            },
+            {
+              "value": "MO",
+              "text": {
+                "fr": "Missouri",
+                "en": "Missouri"
+              }
+            },
+            {
+              "value": "MT",
+              "text": {
+                "fr": "Montana",
+                "en": "Montana"
+              }
+            },
+            {
+              "value": "NE",
+              "text": {
+                "fr": "Nebraska",
+                "en": "Nebraska"
+              }
+            },
+            {
+              "value": "NV",
+              "text": {
+                "fr": "Nevada",
+                "en": "Nevada"
+              }
+            },
+            {
+              "value": "NH",
+              "text": {
+                "fr": "New Hampshire",
+                "en": "New Hampshire"
+              }
+            },
+            {
+              "value": "NJ",
+              "text": {
+                "fr": "New Jersey",
+                "en": "New Jersey"
+              }
+            },
+            {
+              "value": "NM",
+              "text": {
+                "fr": "New Mexico",
+                "en": "New Mexico"
+              }
+            },
+            {
+              "value": "NY",
+              "text": {
+                "fr": "New York",
+                "en": "New York"
+              }
+            },
+            {
+              "value": "NC",
+              "text": {
+                "fr": "North Carolina",
+                "en": "North Carolina"
+              }
+            },
+            {
+              "value": "ND",
+              "text": {
+                "fr": "North Dakota",
+                "en": "North Dakota"
+              }
+            },
+            {
+              "value": "MP",
+              "text": {
+                "fr": "Northern Mariana Islands",
+                "en": "Northern Mariana Islands"
+              }
+            },
+            {
+              "value": "OH",
+              "text": {
+                "fr": "Ohio",
+                "en": "Ohio"
+              }
+            },
+            {
+              "value": "OK",
+              "text": {
+                "fr": "Oklahoma",
+                "en": "Oklahoma"
+              }
+            },
+            {
+              "value": "OR",
+              "text": {
+                "fr": "Oregon",
+                "en": "Oregon"
+              }
+            },
+            {
+              "value": "PW",
+              "text": {
+                "fr": "Palau",
+                "en": "Palau"
+              }
+            },
+            {
+              "value": "PA",
+              "text": {
+                "fr": "Pennsylvania",
+                "en": "Pennsylvania"
+              }
+            },
+            {
+              "value": "PR",
+              "text": {
+                "fr": "Puerto Rico",
+                "en": "Puerto Rico"
+              }
+            },
+            {
+              "value": "RI",
+              "text": {
+                "fr": "Rhode Island",
+                "en": "Rhode Island"
+              }
+            },
+            {
+              "value": "SC",
+              "text": {
+                "fr": "South Carolina",
+                "en": "South Carolina"
+              }
+            },
+            {
+              "value": "SD",
+              "text": {
+                "fr": "South Dakota",
+                "en": "South Dakota"
+              }
+            },
+            {
+              "value": "TN",
+              "text": {
+                "fr": "Tennessee",
+                "en": "Tennessee"
+              }
+            },
+            {
+              "value": "TX",
+              "text": {
+                "fr": "Texas",
+                "en": "Texas"
+              }
+            },
+            {
+              "value": "UT",
+              "text": {
+                "fr": "Utah",
+                "en": "Utah"
+              }
+            },
+            {
+              "value": "VT",
+              "text": {
+                "fr": "Vermont",
+                "en": "Vermont"
+              }
+            },
+            {
+              "value": "VI",
+              "text": {
+                "fr": "Virgin Islands",
+                "en": "Virgin Islands"
+              }
+            },
+            {
+              "value": "VA",
+              "text": {
+                "fr": "Virginia",
+                "en": "Virginia"
+              }
+            },
+            {
+              "value": "WA",
+              "text": {
+                "fr": "Washington",
+                "en": "Washington"
+              }
+            },
+            {
+              "value": "WV",
+              "text": {
+                "fr": "West Virginia",
+                "en": "West Virginia"
+              }
+            },
+            {
+              "value": "WI",
+              "text": {
+                "fr": "Wisconsin",
+                "en": "Wisconsin"
+              }
+            },
+            {
+              "value": "WY",
+              "text": {
+                "fr": "Wyoming",
+                "en": "Wyoming"
+              }
+            }
+          ],
+          "choicesByUrl": {
+            "valueName": "value",
+            "titleName": "text"
+          }
+        },
+        {
+          "type": "text",
+          "name": "question_09",
+          "visibleIf": "{question_05} = 'residence_country_other'",
+          "title": {
+            "fr": "Précisez le pays SVP",
+            "en": "Please specify the country"
+          },
+          "isRequired": true
+        },
+        {
+          "type": "text",
+          "name": "question_10",
+          "title": {
+            "fr": "En vous incluant, combien de personnes formant votre groupe ont assisté à Afromonde ?",
+            "en": "Including yourself, how many people in your group attended Afromonde?"
+          },
+          "description": {
+            "fr": "Note : il s'agit ici du groupe formé des personnes de la famille ou des amis et non d'un groupe organisé de personnes. Considérez votre dernière visite si vous y êtes allé(e) les deux jours.",
+            "en": "Note: This refers to the group made up of family members or friends and not an organized group of people. Consider your last visit if you went both days."
+          },
+          "isRequired": true,
+          "inputType": "number",
+          "min": 1,
+          "step": 1
+        },
+        {
+          "type": "text",
+          "name": "question_11",
+          "title": {
+            "fr": "De ce nombre, combien y avait-il d'enfant(s) de moins de 16 ans ?",
+            "en": "Of this number, how many children under 16 years old were there?"
+          },
+          "isRequired": true,
+          "inputType": "number"
+        },
+        {
+          "type": "dropdown",
+          "name": "question_12",
+          "title": {
+            "fr": "Durant votre visite à Afromonde, étiez-vous à Montréal dans le cadre d'un voyage aller-retour la même journée ou dans le cadre d'un séjour impliquant une ou plusieurs nuitées à l'extérieur de votre lieu de résidence habituel ?",
+            "en": "During your visit to Afromonde, were you in Montreal for a same-day round trip or as part of a stay involving one or more nights away from your usual place of residence?"
+          },
+          "isRequired": true,
+          "choices": [
+            {
+              "value": "Item 3",
+              "text": {
+                "fr": "J'étais en permanence à Montréal pendant la période",
+                "en": "I was permanently in Montreal during the period"
+              }
+            },
+            {
+              "value": "sejour_nuites",
+              "text": {
+                "fr": "Séjour d'une nuitée ou plus",
+                "en": "Stay of one night or more"
+              }
+            },
+            {
+              "value": "voyage_aller_retour",
+              "text": {
+                "fr": "Voyage aller-retour",
+                "en": "Round trip"
+              }
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "name": "question_13",
+          "visibleIf": "{question_12} = 'sejour_nuites'",
+          "title": {
+            "fr": "Quelle a été la durée totale de votre séjour, en nombre de nuitées, à Montréal ?",
+            "en": "What was the total duration of your stay, in number of nights, in Montreal?"
+          },
+          "inputType": "number"
+        },
+        {
+          "type": "tagbox",
+          "name": "question_14",
+          "visibleIf": "{question_12} = 'sejour_nuites'",
+          "title": {
+            "fr": "Au cours de votre séjour à Montréal pour participer à Afromonde, dans quel type d'hébergement avez-vous séjourné ?",
+            "en": "During your stay in Montreal to participate in Afromonde, what type of accommodation did you stay in?"
+          },
+          "description": {
+            "fr": "Plusieurs réponses sont possibles.",
+            "en": "Multiple answers are possible."
+          },
+          "choices": [
+            {
+              "value": "choix_hotel",
+              "text": {
+                "fr": "Dans un établissement commercial (hôtel, motel, gîte, résidence de tourisme, etc.)",
+                "en": "In a commercial establishment (hotel, motel, bed & breakfast, tourist residence, etc.)"
+              }
+            },
+            {
+              "value": "choix_airbnb",
+              "text": {
+                "fr": "Dans un hébergement privé loué (ex. : Airbnb, HomeAway, FlipKey, etc.)",
+                "en": "In rented private accommodation (e.g. Airbnb, HomeAway, FlipKey, etc.)"
+              }
+            },
+            {
+              "value": "choix_proches",
+              "text": {
+                "fr": "Chez des parents ou amis",
+                "en": "With relatives or friends"
+              }
+            },
+            {
+              "value": "choix_residence",
+              "text": {
+                "fr": "Dans une résidence secondaire (non commerciale)",
+                "en": "In a second home (non-commercial)"
+              }
+            },
+            {
+              "value": "choix_autre",
+              "text": {
+                "fr": "Autre (veuillez préciser)",
+                "en": "Other (please specify)"
+              }
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "name": "question_15",
+          "visibleIf": "{question_14} allof ['choix_autre']",
+          "title": {
+            "fr": "Pour autre ci-dessus, préciser SVP",
+            "en": "For other above, please specify"
+          }
+        },
+        {
+          "type": "dropdown",
+          "name": "question_16",
+          "visibleIf": "{question_12} = 'sejour_nuites'",
+          "title": {
+            "fr": "Quelle était la raison principale de votre voyage à Montréal ?",
+            "en": "What was the main reason for your trip to Montreal?"
+          },
+          "choices": [
+            {
+              "value": "Item 1",
+              "text": {
+                "fr": "Participer à Afromonde",
+                "en": "Participate in Afromonde"
+              }
+            },
+            {
+              "value": "Item 2",
+              "text": {
+                "fr": "Autre(s) raison(s)",
+                "en": "Other reason(s)"
+              }
+            },
+            {
+              "value": "Item 3",
+              "text": {
+                "fr": "Je ne sais pas",
+                "en": "I don't know"
+              }
+            }
+          ]
+        },
+        {
+          "type": "radiogroup",
+          "name": "question_17",
+          "visibleIf": "{question_12} = 'sejour_nuites' or {question_12} = 'voyage_aller_retour'",
+          "title": {
+            "fr": "Avant de venir à Montréal et de participer à Afromonde, connaissiez-vous ou aviez-vous entendu parler de cet événement ?",
+            "en": "Before coming to Montreal and participating in Afromonde, did you know or have you heard about this event?"
+          },
+          "choices": [
+            {
+              "value": "connu_oui",
+              "text": {
+                "fr": "Oui",
+                "en": "Yes"
+              }
+            },
+            {
+              "value": "connu_non",
+              "text": {
+                "fr": "Non",
+                "en": "No"
+              }
+            }
+          ]
+        },
+        {
+          "type": "dropdown",
+          "name": "question_18",
+          "title": {
+            "fr": "Globalement, avez-vous aimé votre expérience à Afromonde ?",
+            "en": "Overall, did you enjoy your experience at Afromonde?"
+          },
+          "isRequired": true,
+          "choices": [
+            {
+              "value": "Experience_5",
+              "text": {
+                "fr": "5 - Excellente",
+                "en": "5 - Excellent"
+              }
+            },
+            {
+              "value": "Experience_4",
+              "text": {
+                "fr": "4 - Beaucoup",
+                "en": "4 - Very much"
+              }
+            },
+            {
+              "value": "Experience_3",
+              "text": {
+                "fr": "3 - Assez",
+                "en": "3 - Somewhat"
+              }
+            },
+            {
+              "value": "Experience_2",
+              "text": {
+                "fr": "2 - Peu",
+                "en": "2 - A little"
+              }
+            },
+            {
+              "value": "Experience_1",
+              "text": {
+                "fr": "1 - Pas du tout",
+                "en": "1 - Not at all"
+              }
+            }
+          ]
+        },
+        {
+          "type": "dropdown",
+          "name": "question_19",
+          "title": {
+            "fr": "Avez-vous l'intention de participer de nouveau à Afromonde l'an prochain ?",
+            "en": "Do you intend to participate in Afromonde again next year?"
+          },
+          "isRequired": true,
+          "choices": [
+            {
+              "value": "prochaine_participation_certainement",
+              "text": {
+                "fr": "Certainement",
+                "en": "Definitely"
+              }
+            },
+            {
+              "value": "prochaine_participation_probablement",
+              "text": {
+                "fr": "Probablement",
+                "en": "Probably"
+              }
+            },
+            {
+              "value": "prochaine_participation_probablement_pas",
+              "text": {
+                "fr": "Probablement pas",
+                "en": "Probably not"
+              }
+            },
+            {
+              "value": "prochaine_participation_certainement_pas",
+              "text": {
+                "fr": "Certainement pas",
+                "en": "Definitely not"
+              }
+            },
+            {
+              "value": "prochaine_participation_incertain",
+              "text": {
+                "fr": "Incertain",
+                "en": "Uncertain"
+              }
+            }
+          ]
+        },
+        {
+          "type": "checkbox",
+          "name": "question_20",
+          "title": {
+            "fr": "J'accepte que Afromonde me tienne au courant de ses activités",
+            "en": "I agree to let Afromonde keep me informed of its activities"
+          },
+          "choices": [
+            {
+              "value": "keep_me_updated",
+              "text": {
+                "fr": "Oui m'informer des nouvelles et activités d'Afromonde",
+                "en": "Yes, keep me informed of Afromonde news and activities"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "headerView": "advanced"
+}

@@ -1,0 +1,18 @@
+<div class="survey-container">
+  <app-language-switcher></app-language-switcher>
+  
+  <div class="logo-container">
+    <img [src]="logoPath" alt="Festival Afromonde 2025" class="logo">
+  </div>
+  
+  @if (showThankYou) {
+    <div class="thank-you-message">
+      <h2>{{ translations.thankYouTitle }}</h2>
+      <p>{{ translations.thankYouMessage }}</p>
+    </div>
+  } @else if (surveyModel) {
+    <survey [model]="surveyModel"></survey>
+  } @else {
+    <div class="loading">{{ translations.loading }}</div>
+  }
+</div>
